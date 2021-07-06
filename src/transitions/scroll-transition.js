@@ -126,7 +126,6 @@ export default class ScrollTransition extends React.Component {
 
     return React.Children.map(children, (child, index) => {
       const isVisible = isFullyVisible(index, this.props);
-      const inert = isVisible ? {} : { inert: 'true' };
       return (
         <li
           className={`slider-slide${getSlideClassName(
@@ -138,7 +137,6 @@ export default class ScrollTransition extends React.Component {
           key={index}
           onClick={handleSelfFocus}
           tabIndex={-1}
-          {...inert}
         >
           {child}
         </li>
